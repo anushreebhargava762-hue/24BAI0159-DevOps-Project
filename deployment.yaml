@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: college-website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: college-website
+  template:
+    metadata:
+      labels:
+        app: college-website
+    spec:
+      containers:
+      - name: website
+        image: college-website
+        ports:
+        - containerPort: 80
